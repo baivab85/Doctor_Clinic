@@ -1,0 +1,6 @@
+defaults:
+  - scope:
+      path: ""
+      type: "jsp"
+    values:
+      layout: "default"
