@@ -1,4 +1,4 @@
-# Sample workflow for building and deploying a Jekyll site to GitHub Pages
+# Sample workflow for building and deploying a Jekyll site with JSP files to GitHub Pages
 name: Deploy Jekyll with GitHub Pages dependencies preinstalled
 
 on:
@@ -35,6 +35,9 @@ jobs:
         with:
           source: ./
           destination: ./_site
+      - name: Copy JSP files
+        run: |
+          find . -type f -name "*.jsp" -exec cp {} ./_site/ \;
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
@@ -49,3 +52,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
